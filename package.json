@@ -1,0 +1,17 @@
+{
+  "name": "logistics",
+  "version": "1.0.0",
+  "description": "Landing page for logistics",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Mateusz",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "jquery-circle-progress": "^1.2.2"
+  }
+}

@@ -1,0 +1,47 @@
+.card {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 5% auto;
+    height: 50vh;
+    background-color: $color-main-2;
+    border-radius: 1rem;
+
+    &__picture {
+        background-blend-mode: overlay;
+        background-size: cover;
+        height: 20rem;
+
+        &--1 {
+            background-image: 
+                url(../img/card1.jpg);
+            background-blend-mode: screen;
+            background-color: $color-main-5;
+            background-position: center;
+        }
+
+        &--2 {
+            background-image: 
+                url(../img/card2.jpg);
+            background-blend-mode: screen;
+            background-color: $color-main-5;
+            background-position: top;
+        }
+
+        &--3 {
+            background-image: 
+                url(../img/card3.jpg);
+            background-blend-mode: screen;
+            background-color: $color-main-5;
+            background-position: center;
+        }
+
+        &--4 {
+            background-image: 
+                url(../img/card4.jpg);
+            background-blend-mode: screen;
+            background-color: $color-main-5;
+            background-position: top;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.form-box {
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.form-field {
+    color: $color-main-5;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    height: 4.5rem;
+    padding: 0 2rem;
+    border: .1rem solid #ddd;
+    background-color: $color-white;
+    border-radius: .4rem;
+    font-family: inherit;
+    outline: 0;
+    transition: .2s;
+    margin-top: 1rem;
+
+    &:focus {
+        border: .2rem solid $color-main-5;
+    }
+}
+
+.input-field--message {
+    display: block;
+    width: 50%;
+    color:grey;
+    font-weight: 300;
+    font-size: 1.3rem;
+    margin: 0 auto;
+}
+
+.textarea {
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    overflow: hidden;
+    resize: both;
+    min-height: 4.5rem;
+
+}

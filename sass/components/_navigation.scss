@@ -1,0 +1,232 @@
+.nav {
+    display: block;
+    position: relative;
+    z-index: 100;
+    height: 12rem;
+    width: 100%;
+
+    @include respond(phone) {
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+    &__logo {
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        margin-left: 4rem;
+        margin-top: 2rem;
+        width: 20rem;
+        height: auto;
+
+
+        @include respond(tab-land) {
+            width: 15rem;
+            margin-left: 2rem;
+        }
+    }
+
+    &__icon {
+        display: block;
+        height: 5rem;
+        width: 5rem;
+        border-radius: 10rem;
+        background-color: $color-white;
+        text-align: center;        
+        cursor: pointer;
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        color: $color-main-1;
+        font-size: 3rem;
+
+
+
+        &:hover {
+            transform: translateY(-.2rem);
+            box-shadow: 0rem .5rem 1.5rem rgba(#000,.3);
+        }
+
+        &:active {
+            transform: translateY(.2rem);
+            box-shadow: 0rem .5rem .5rem rgba(#000,.3);
+        }
+    }
+
+    &__box {
+        position: absolute;
+        width: auto;
+        top:0;
+        right: 5rem;
+        margin-top: 2rem;
+        margin-right: 4rem;
+
+        @include respond(tab-port) {
+            position: fixed;
+            display: none;
+            padding: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-bottom: 10rem;
+            margin-top: 0;
+            padding: 1rem 0;
+            background-color: white; 
+            width: 100vw;
+            height: 100vh;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin:0;
+            
+            @include respond(tab-port) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 3rem;;
+            }
+
+            li {
+                @include respond(tab-port) {
+                    float: none;
+                    text-align: center;
+                }
+                float: left;
+                margin-top: 2rem;
+                a {
+                    @include respond(tab-land) {
+                        margin-left: .25rem;
+                        letter-spacing: .15rem;
+                        padding: .75rem 1rem;
+                    }
+                    font-size: 2rem;
+                    font-weight: 300;
+                    letter-spacing: .25rem;
+                    color: $color-main-4;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 1rem 2rem;
+                    margin-left: 2rem;
+
+                    &:hover {
+                        background-color: $color-main-4;
+                        color: $color-main-2;
+                        border-radius: .5rem;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.sticky {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    height: 12rem;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    background-color: $color-white;
+    box-shadow: 0 2rem 1rem rgba($color-main-2, .3);
+
+    @include respond(tab-port) {
+        position: fixed;
+        display: inline-block;
+        height: 100vh;
+        width: 100vw;
+        top: 50%;
+        background-color: $color-white;
+    }
+
+
+
+    &__logo {
+        position: fixed;
+        z-index: 101;
+        top: 0;
+        left: 0;
+        margin-left: 4rem;
+        margin-top: 2rem;
+        width: 20rem;
+        height: auto;
+    
+    }
+
+
+    &__icon {
+        display: block;
+        height: 5rem;
+        width: 5rem;
+        border-radius: 10rem;
+        box-shadow: 0rem .5rem 1rem rgba(#000,.3);
+        background-color: $color-white;
+        text-align: center;        
+        cursor: pointer;
+        position: fixed;
+        top: 3rem;
+        right: 2.5rem;
+        color: $color-main-1;
+        font-size: 3rem;
+
+
+
+        &:hover {
+            transform: translateY(-.2rem);
+            box-shadow: 0rem .5rem 1.5rem rgba(#000,.3);
+        }
+
+        &:active {
+            transform: translateY(.2rem);
+            box-shadow: 0rem .5rem .5rem rgba(#000,.3);
+        }
+    }
+
+    ul {
+        
+        float: right;
+        margin-top: 2rem;
+        margin-right: 10rem;
+        @include respond(phone) {
+            float: none;
+            margin: 2rem 0;
+        }
+
+        li {
+            float:left;
+
+            
+            @include respond(tab-port) {
+                width: 100%;
+            }
+
+            @include respond(phone) {
+                float: none;
+            }
+
+            a {
+                @include respond(phone) {
+                    width: 30%;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                
+                &:hover {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+}
+
+.non-display {
+    display: none;
+}
