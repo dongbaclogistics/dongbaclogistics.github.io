@@ -2,6 +2,8 @@
 
 window.onload = clearInputs();
 
+const socket = io("http://localhost:9080/");
+
 function clearInputs() {
     //inputs 
     document.getElementsByClassName("form-person")[0].value = "";
