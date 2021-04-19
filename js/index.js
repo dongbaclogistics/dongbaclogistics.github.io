@@ -107,24 +107,21 @@ function changeViews(){
         if(viewStart < dataViews.length){
             boxElm.classList.add("change");
             boxElmChild[viewStart].classList.remove("is-hidden");
+            boxElmChild[viewStart].classList.add("is-visible");
             if(boxElm.classList.contains("change")){
-                boxElmChild[viewStart].classList.add("is-visible");
                 setTimeout(() => {
                     boxElm.classList.remove("change");
-                }, 500)
+                }, 1000)
             }
             viewStart++;
         }else{
             viewStart = 0;
             boxElmChild[viewStart].classList.remove("is-hidden");
+            boxElmChild[viewStart].classList.add("is-visible");
             if(boxElm.classList.contains("change")){
-                boxElmChild[viewStart].classList.add("is-visible");
-                if(boxElm.classList.contains("change")){
-                    boxElmChild[viewStart].classList.add("is-visible");
-                    setTimeout(t1=() => {
-                        boxElm.classList.remove("change");
-                    }, 500)
-                }
+                setTimeout(() => {
+                    boxElm.classList.remove("change");
+                }, 1000)
             }
         }
         
@@ -140,10 +137,9 @@ function changeViews(){
             box1ElmChild[wordStart].classList.remove("is-hidden");
             box1ElmChild[wordStart].classList.add("is-visible");
             if(boxElm1.classList.contains("change")){
-                box1ElmChild[wordStart].classList.add("is-visible");
-                setTimeout(t1=() => {
+                setTimeout(() => {
                     boxElm1.classList.remove("change");
-                }, 500)
+                }, 1000)
             }
             wordStart++;
         }else{
@@ -152,10 +148,9 @@ function changeViews(){
             box1ElmChild[wordStart].classList.remove("is-hidden");
             box1ElmChild[wordStart].classList.add("is-visible");
             if(boxElm1.classList.contains("change")){
-                box1ElmChild[viewStart].classList.add("is-visible");
-                setTimeout(t1=() => {
+                setTimeout(() => {
                     boxElm1.classList.remove("change");
-                }, 500)
+                }, 1000)
             }
         }
     },2000)
