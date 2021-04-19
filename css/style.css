@@ -1302,3 +1302,114 @@ body {
   color: white;
   font-size: 1.3rem;
 }
+
+.xo-see-people{
+  top: calc(100%);
+  left: 0px;
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+  height: 6rem;
+  transition: top .6s ease-in-out;
+}
+.xo-section-background{
+  background-color: rgb(228, 228, 228);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.xo-container{
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.is-hidden{
+  opacity: 0;
+  transition: opacity .4s ease-in-out;
+}
+.is-visible{
+  opacity: 1;
+}
+b{
+  white-space: nowrap;
+  /* position: absolute; */
+}
+.xo-paragraph{
+  color: rgb(244, 64, 37);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.6;
+  display: inline-block;
+}
+
+.after{
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  width: 3px;
+  height: 100%;
+}
+
+.after1{
+  position: absolute;
+  top: 0rem;
+  right: 0.5rem;
+  width: 3px;
+  height: 100%;
+}
+
+.sub-element{
+  font-size: 1.6rem;
+  top: 1.7rem;
+  left: 15rem;
+  position: absolute;
+}
+.sub-element1{
+  font-size: 1.6rem;
+  top: 1.7rem;
+  position: absolute;
+  left: 12rem;
+}
+.t1{
+  position: relative;
+  top: 2rem;
+  left: 12.5rem;
+  font-size: 2rem;
+}
+.t2{
+  position: relative;
+  top: 2rem;
+  left: 9.5rem;
+  font-size: 2rem;
+}
+.xo-group{
+  position: relative;
+  height: 100%;
+}
+b{
+  position: absolute;
+  top:0;
+  left: 0.9rem;
+}
+.xo-box{
+  position: relative;
+  left: 5.5rem;
+  width: 35px;
+  height: 30px;
+  overflow: hidden;
+  transition: width .6s ease-in-out;
+}
+
+.change{
+  width: 8px !important;
+}
+
+.scroll-modal{
+  top: calc(100% - 59px);
+}

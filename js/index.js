@@ -1,8 +1,28 @@
 
+// var socket = io("http://localhost:9080/");
+// window.onload = clearInputs();
 
-window.onload = clearInputs();
+window.addEventListener('load', function() {
 
-const socket = io("http://localhost:9080/");
+    // function updateOnlineStatus(event) {
+    //     socket.emit("check", {data: "1"})
+    //     document.body.setAttribute("data-online", navigator.onLine);
+    // }
+    // updateOnlineStatus();
+    clearInputs();
+    appendCom();
+    changeViews();
+    // window.addEventListener('online',  updateOnlineStatus);
+    // window.addEventListener('offline', updateOnlineStatus);
+  });
+
+  window.addEventListener('scroll', () => {
+    document.getElementsByClassName("xo-see-people")[0].classList.remove('scroll-modal');
+    setTimeout(() => {
+        document.getElementsByClassName("xo-see-people")[0].classList.add('scroll-modal');
+    }, 2000)}
+  )
+
 
 function clearInputs() {
     //inputs 
@@ -15,6 +35,11 @@ function clearInputs() {
     document.getElementsByClassName("form-header")[0].value = ""; 
     document.getElementsByClassName("form-body")[0].value = "";
 }
+
+
+// socket.on("check", (data) => {
+//     console.log("check data " + data);
+// })
 
 function sendEmail() {
     //inputs 
@@ -44,4 +69,94 @@ function sendEmail() {
         button: "OK",
       });
     clearInputs();
+}
+
+var dataViews = [81, 83, 84, 86, 89, 91, 92, 93, 91, 86, 93];
+var dataWord = [11, 12, 9, 6, 8, 7, 5];
+var dataViewsElm = '';
+var dataWordElm = '';
+var viewStart = 1;
+var wordStart = 1;
+var boxElm = document.getElementById("box1");
+var boxElm1 = document.getElementById("box2");
+function appendCom(){
+    dataViewsElm += `<b class="is-visible">${dataViews[0]}</b>`;
+    dataWordElm  += `<b class="is-visible">${dataWord[0]}</b>`
+    for (let index = 1; index < dataViews.length; index++) {
+        dataViewsElm += `<b class="is-hidden">${dataViews[index]}</b>`;
+    }
+    for (let index = 1; index < dataWord.length; index++) {
+        dataWordElm  += `<b class="is-hidden">${dataWord[index]}</b>`
+    }
+
+    boxElm.innerHTML += dataViewsElm;
+    boxElm1.innerHTML += dataWordElm;
+}
+
+function changeViews(){
+    setInterval(() => {
+        const boxElmChild = boxElm.querySelectorAll('b');
+        const box1ElmChild = boxElm1.querySelectorAll('b');
+        for (let index = 0; index < boxElmChild.length; index++) {
+            if(boxElmChild[index].classList.contains("is-visible")){
+                viewStart = index + 1;
+                boxElmChild[index].classList.remove("is-visible");
+                boxElmChild[index].classList.add("is-hidden");
+            }
+        }
+        if(viewStart < dataViews.length){
+            boxElm.classList.add("change");
+            boxElmChild[viewStart].classList.remove("is-hidden");
+            if(boxElm.classList.contains("change")){
+                boxElmChild[viewStart].classList.add("is-visible");
+                setTimeout(() => {
+                    boxElm.classList.remove("change");
+                }, 500)
+            }
+            viewStart++;
+        }else{
+            viewStart = 0;
+            boxElmChild[viewStart].classList.remove("is-hidden");
+            if(boxElm.classList.contains("change")){
+                boxElmChild[viewStart].classList.add("is-visible");
+                if(boxElm.classList.contains("change")){
+                    boxElmChild[viewStart].classList.add("is-visible");
+                    setTimeout(t1=() => {
+                        boxElm.classList.remove("change");
+                    }, 500)
+                }
+            }
+        }
+        
+        for (let index = 0; index < box1ElmChild.length; index++) {
+            if(box1ElmChild[index].classList.contains("is-visible")){
+                wordStart = index + 1;
+                box1ElmChild[index].classList.remove("is-visible");
+                box1ElmChild[index].classList.add("is-hidden");
+            }
+        }
+        if(wordStart < dataWord.length){
+            boxElm1.classList.add("change");
+            box1ElmChild[wordStart].classList.remove("is-hidden");
+            box1ElmChild[wordStart].classList.add("is-visible");
+            if(boxElm1.classList.contains("change")){
+                box1ElmChild[wordStart].classList.add("is-visible");
+                setTimeout(t1=() => {
+                    boxElm1.classList.remove("change");
+                }, 500)
+            }
+            wordStart++;
+        }else{
+            boxElm1.classList.add("change");
+            wordStart = 0;
+            box1ElmChild[wordStart].classList.remove("is-hidden");
+            box1ElmChild[wordStart].classList.add("is-visible");
+            if(boxElm1.classList.contains("change")){
+                box1ElmChild[viewStart].classList.add("is-visible");
+                setTimeout(t1=() => {
+                    boxElm1.classList.remove("change");
+                }, 500)
+            }
+        }
+    },2000)
 }
