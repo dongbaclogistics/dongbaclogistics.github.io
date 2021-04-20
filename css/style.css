@@ -1336,6 +1336,7 @@ body {
 .is-visible{
   opacity: 1;
   left: 0.9rem;
+  transition: all .4s ease-in-out;
 }
 b{
   white-space: nowrap;
@@ -1404,7 +1405,7 @@ b{
   width: 35px;
   height: 30px;
   overflow: hidden;
-  transition: width .6s ease-in-out;
+  transition: width .3s ease-in-out;
 }
 
 .change{
