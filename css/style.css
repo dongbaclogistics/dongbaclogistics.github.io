@@ -103,7 +103,7 @@ body {
   .heading__main {
     text-transform: uppercase;
     text-align: center;
-    color: #ecd9d9;
+    color: white;
     display: block;
     font-size: 3rem;
     font-weight: 900;
@@ -165,7 +165,7 @@ body {
     margin-bottom: .25rem;
     font-weight: 700; }
   .heading__sub {
-    color: #ecd9d9;
+    color: white;
     text-transform: uppercase;
     text-align: center;
     display: inline-block;
@@ -418,7 +418,7 @@ body {
           font-size: 2rem;
           font-weight: 300;
           letter-spacing: .25rem;
-          color: #ecd9d9;
+          color: white;
           text-transform: uppercase;
           text-decoration: none;
           padding: 1rem 2rem;
