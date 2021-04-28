@@ -3,6 +3,7 @@ var navbar = document.querySelector(".nav__box");
 var navBox = document.querySelector("#nav");
 var navLogo = document.querySelector(".nav__logo");
 var navIcon = document.querySelector(".nav__icon");
+var test1 = document.querySelector("#xo-1")
 
 
 // Get the offset height of the navBox
@@ -46,12 +47,16 @@ $('.js--nav__icon').click(function() {
         box.addClass('margin-down--small')
         navbar.classList.add("sticky");
         navLogo.classList.remove("sticky__logo");
+        test1.classList.add("xo-1-text");
+        test1.classList.remove("xo-1");
     } else {
         navbar.classList.remove("sticky");
         navLogo.classList.add("sticky__logo");
         icon.addClass('fa-times');
         icon.removeClass('fa-bars');
         box.removeClass('margin-down--small')
+        test1.classList.remove("xo-1-text");
+        test1.classList.add("xo-1");
     }
 });
 
