@@ -47,11 +47,13 @@ $('.js--nav__icon').click(function() {
         box.addClass('margin-down--small')
         navbar.classList.add("sticky");
         navLogo.classList.remove("sticky__logo");
+        navLogo.classList.add("sticky12");
         test1.classList.add("xo-1-text");
         test1.classList.remove("xo-1");
     } else {
         navbar.classList.remove("sticky");
         navLogo.classList.add("sticky__logo");
+        navLogo.classList.remove("sticky12");
         icon.addClass('fa-times');
         icon.removeClass('fa-bars');
         box.removeClass('margin-down--small')
