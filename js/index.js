@@ -28,10 +28,6 @@ function clearInputs() {
     document.getElementsByClassName("form-person")[0].value = "";
     document.getElementsByClassName("form-email")[0].value = "";
     document.getElementsByClassName("form-phone")[0].value = "";
-    document.getElementsByClassName("form-start")[0].value = "";
-    document.getElementsByClassName("form-aim")[0].value = "";
-    document.getElementsByClassName("form-type")[0].value = "";
-    document.getElementsByClassName("form-header")[0].value = "";
     document.getElementsByClassName("form-body")[0].value = "";
 }
 
@@ -43,7 +39,7 @@ function clearInputs() {
 function sendEmail() {
     //inputs 
     var from = document.getElementsByClassName("form-email")[0].value;
-    var subject = document.getElementsByClassName("form-header")[0].value;
+    var subject = document.getElementsByClassName("form-header")[0].value || "khách hàng liên hệ";
     var body = "PERSON: " + document.getElementsByClassName("form-person")[0].value + "<br/>" + "<br/>" +
         "TEL.: " + document.getElementsByClassName("form-phone")[0].value + "<br/>" + "<br/>" +
         "MESSAGE: " + document.getElementsByClassName("form-body")[0].value + "<br/>";
@@ -53,7 +49,7 @@ function sendEmail() {
         SecureToken: "a412476e-c856-4d10-a2a9-79ea1ca46e7e",
         To: 'nguyentienthinh41298@gmail.com@gmail.com',
         From: from,
-        Subject: subject || "khách hàng liên hệ",
+        Subject: subject,
         Body: body,
     }).then();
 
@@ -76,6 +72,7 @@ var boxElm = document.getElementById("box1");
 var boxElm1 = document.getElementById("box2");
 
 function appendCom() {
+    console.log("1");
     dataViewsElm += `<b class="is-visible">${dataViews[0]}</b>`;
     dataWordElm += `<b class="is-visible">${dataWord[0]}</b>`
     for (let index = 1; index < dataViews.length; index++) {
